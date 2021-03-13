@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 from cv2 import imread, cvtColor, COLOR_RGB2GRAY
 from sys import argv
 
@@ -53,7 +55,7 @@ def convert_ascii(name):
     chars = "@>#*+=-:. "
 
     # reducing number of colors in image according to number of available characters
-    rImage = bwImage // (255 / len(chars))
+    rImage = bwImage // (26)
 
     # freeing up some memory
     del(bwImage)
@@ -73,5 +75,5 @@ def convert_ascii(name):
     write_html(nImage)
 
 
-if __name__ == __main__:
+if __name__ == "__main__":
     convert_ascii(argv[1])
