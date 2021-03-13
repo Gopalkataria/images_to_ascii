@@ -55,7 +55,7 @@ def convert_ascii(name):
     chars = "@>#*+=-:. "
 
     # reducing number of colors in image according to number of available characters
-    rImage = bwImage // (26)
+    rImage = bwImage // (int( 255 / len(chars)) + 1 )
 
     # freeing up some memory
     del(bwImage)
