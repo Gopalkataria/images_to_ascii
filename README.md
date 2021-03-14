@@ -1,7 +1,7 @@
 ## images_to_ascii
 
-###converting images to ascii for some random fun. 
-###works by first making the image grayscale, and finding a corresponding character for each pixel.
+### converting images to ascii for some random fun. 
+### works by first making the image grayscale, and finding a corresponding character for each pixel.
 
 <br/>
 
@@ -20,7 +20,7 @@ characters = a string with characters, eg "$%^&- " to use in ascii art. order ca
 
 <br/> characters can be omitted, in that case a built in one will be used
 <br/>
-Its just a fun project and I have no intentions to maintain it, so don't create pull requests. feel free to fork it and make it your own 
+### Its just a fun project and I have no intentions to maintain it, so don't create pull requests. feel free to fork it and make it your own 
 <br/>
 
 
