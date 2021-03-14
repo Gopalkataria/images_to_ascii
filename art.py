@@ -4,8 +4,8 @@ from cv2 import imread, cvtColor, COLOR_RGB2GRAY
 from sys import argv
 
 
-def write_html(nImage):
-    f = open("output.html", "w")
+def write_html(nImage, fname ):
+    f = open( fname + ".html", "w")
 
     height = len(nImage) * 20
 
@@ -31,9 +31,9 @@ def write_html(nImage):
     f.close()
 
 
-def write_txt(nImage):
+def write_txt(nImage , fname ):
 
-    f = open("output.txt", "w")
+    f = open( fname + ".txt", "w")
 
     for l in nImage:
         f.write(l)
@@ -42,17 +42,23 @@ def write_txt(nImage):
     f.close()
 
 
-def convert_ascii(name):
+def convert_ascii(name, chars_given , fname ):
     # opening the image
-    image = imread("image.jpg")
+    image = imread(name)
     # converting image to grayscale for my algo to work
     bwImage = cvtColor(image, COLOR_RGB2GRAY)
 
     # other character lists for fun to try out
-    # chars = "$@B%8&WM#*oahkbwmZO0QLJDEXznxrjft/\|()1{}[]?-_+~i!lI;:,\\\"^`\". "
-    # chars = "$@B%89WM#*oaihkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~i!lI;:,\\\"^`\".-_"
+    #chars = "$@B%8&WM#*oahkbwmZO0QLJDEXznxrjft/\|()1{}[]?-_+~i!lI;:,\\\"^`\". "
+    #chars = "$@B%89WM#*oaihkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~i!lI;:,\\\"^`\".-_"
     #chars = "@L>*+=-_^`"
     chars = "@>#*+=-:. "
+    #chars = "!@#$%^&*()#- {}:';?><.,|`~" 
+    #chars = " .:-=+*#>"
+    #chars = "#C=A_T.S "
+    
+    if ( chars_given ) :
+            chars = chars_given 
 
     # reducing number of colors in image according to number of available characters
     rImage = bwImage // (int( 255 / len(chars)) + 1 )
@@ -71,9 +77,9 @@ def convert_ascii(name):
         nImage.append(ncol)
         ncol = ""
 
-    write_txt(nImage)
-    write_html(nImage)
+    write_txt(nImage , fname )
+    write_html(nImage, fname )
 
 
 if __name__ == "__main__":
-    convert_ascii(argv[1])
+    convert_ascii(argv[1], argv[2], argv[3])
