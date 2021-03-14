@@ -1,3 +1,4 @@
-imaage.jpg 
-output.txt
-
+*.jpg 
+*.txt
+*.png
+*.html
