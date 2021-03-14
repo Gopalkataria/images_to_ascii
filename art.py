@@ -82,4 +82,8 @@ def convert_ascii(name, chars_given , fname ):
 
 
 if __name__ == "__main__":
-    convert_ascii(argv[1], argv[2], argv[3])
+    if ( len(argv) >= 4  ) :
+        convert_ascii(argv[1], argv[3], argv[2])
+    else :
+        convert_ascii(argv[1] , ""  , argv[2] ) 
+
