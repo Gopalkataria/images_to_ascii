@@ -10,7 +10,7 @@ output in html and txt format
 <br/>
 
 just climb into this directory and 
-<br/> <code> ./art.py <image-name> < file-name > < characters > </code> <br/>
+<br/> <code> ./art.py < image-name > < file-name > < (optional) characters > </code> <br/>
 
 image-name = name of the input image , recommended size beloxe 400x400 pixels, but any png or jpg will do 
 <br/>
